@@ -1,14 +1,16 @@
 #BlueJ class context
 comment0.target=DatabaseCustomer
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ DatabaseCustomer\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ DatabaseCustomer\ here.\r\n\r\n\ @author\ Raudina\ Asrining\ Putri\r\n\ @version\ 01-03-2018\r\n
 comment1.params=
 comment1.target=DatabaseCustomer()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ pesanan\r\n
 comment2.params=baru
 comment2.target=boolean\ addCustomer(Customer)
-comment2.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\r\n\ @param\ \ y\ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ the\ sum\ of\ x\ and\ y\r\n
+comment2.text=\r\n\ metode\ ini\ untuk\ mengeksekusi\ fungsi\ addCustomer\ dengan\ tipe\r\n\ data\ boolean\r\n\r\n\ @return\ metode\ ini\ mengembalikan\ nilai\ false\ karena\r\n\ method\ menggunakan\ tipe\ data\ boolean\r\n\ \r\n\ @param\ metode\ ini\ menggunakan\ parameter\ baru\r\n
 comment3.params=id
 comment3.target=boolean\ removeCustomer(int)
+comment3.text=\r\n\ metode\ ini\ untuk\ mengeksekusi\ fungsi\ removeCustomer\ dengan\ tipe\r\n\ data\ integer\r\n\r\n\ @return\ metode\ ini\ mengembalikan\ nilai\ false\ karena\ \r\n\ method\ menggunakan\ tipe\ data\ boolean\r\n\ \r\n\ @param\ metode\ ini\ menggunakan\ parameter\ baru\r\n
 comment4.params=
 comment4.target=java.lang.String[]\ getCustomerDatabase()
+comment4.text=\r\n\ metode\ ini\ untuk\ mengeksekusi\ fungsi\ getCustomerDatabase\ dengan\ tipe\r\n\ data\ string\ array\r\n\r\n\ @return\ metode\ ini\ mengembalikan\ nilai\ null\ karena\ \r\n\ method\ menggunakan\ tipe\ data\ string\r\n
 numComments=5

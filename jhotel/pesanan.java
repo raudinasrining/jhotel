@@ -17,54 +17,109 @@ public class Pesanan
     /**
      * Constructor for objects of class pesanan
      */
-    public Pesanan()
+    public Pesanan(double biaya, Customer pelanggan)
     {
-            
+         this.biaya = biaya;
+         this.pelanggan = pelanggan;
     }
     
     /**
-     * An example of a method - replace this comment with your own
+     * metode ini untuk mengeksekusi fungsi biaya dengan nilai
+     * yang bertipe data double
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @return metode getBiaya akan mengembalikan nilai pada 
+     * biaya
      */
     public double getBiaya()
     {
-        return 0;
+        return biaya;
     }
     
+    /**
+     * metode ini untuk mengeksekusi fungsi customer
+     *
+     * @return metode getPelanggan akan mengembalikan nilai
+     * pada variabel pelanggan
+     */
     public Customer getPelanggan()
     {
-        return null;
+        return pelanggan;
     }
     
+    /**
+     * metode ini untuk mengeksekusi fungsi getStatusDiproses
+     *
+     * @return metode ini akan mengembalikan nilai pada 
+     * variabel isDiproses
+     */
     public boolean getStatusDiproses()
     {
-        return false;
+        return isDiproses;
     }
     
+    /**
+     * metode ini untuk mengeksekusi fungsi getStatusSelesai
+     *
+     * @return metode ini akan mengembalikan nilai pada 
+     * variabel isDiproses
+     */
     public boolean getStatusSelesai()
     {
-        return false;
+        return isSelesai;
     }
     
-    public double setBiaya(double biaya)
-    {
-        return 0;
+    /**
+     * metode ini untuk mengeksekusi fungsi setBiaya
+     *
+     * @param metode ini menggunakan parameter biaya dengan 
+     * tipe data double
+     */
+    public void setBiaya(double biaya)
+    { //disini digunakan this karena variabel dan parameter menggunakan
+      //nama yang sama yaitu biaya
+        this.biaya = biaya; 
     }
     
+    /**
+     * metode ini untuk mengeksekusi fungsi setPelanggan
+     *
+     * @return metode ini mengembalikan nilai untuk variabel
+     * pelanggan
+     */
     public Customer setPelanggan(Customer baru)
     {
-        return null;
+        return pelanggan;
     }
     
-    public boolean setStatusDiproses(boolean diproses)
+    /**
+     * metode ini untuk mengeksekusi fungsi setStatusDiproses
+     *
+     * @return metode ini mengembalikan nilai untuk variabel
+     * isDiproses
+     */
+    public void setStatusDiproses(boolean diproses)
     {
-        return false;
+        isDiproses = diproses;
     }
     
+    /**
+     * metode ini untuk mengeksekusi fungsi setStatusSelesai
+     *
+     * @return metode ini mengembalikan nilai untuk variabel
+     * isSelesai
+     */
     public boolean setStatusSelesai(boolean diproses)
     {
-        return false;
+        return isSelesai;
+    }
+    
+    /**
+     * metode ini untuk mengeksekusi fungsi printData
+     * dimana variabel biaya akan diprint
+     * 
+     */
+    public void printData()
+    {
+        System.out.println(biaya);
     }
 }
