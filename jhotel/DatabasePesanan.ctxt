@@ -6,6 +6,7 @@ comment1.target=DatabasePesanan()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ pesanan\r\n
 comment2.params=baru
 comment2.target=boolean\ addPesanan(Pesanan)
+comment2.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\r\n\ @param\ \ y\ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ the\ sum\ of\ x\ and\ y\r\n
 comment3.params=pesan
 comment3.target=boolean\ removePesanan(Pesanan)
 comment4.params=cust

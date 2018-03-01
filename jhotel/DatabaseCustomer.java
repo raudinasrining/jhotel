@@ -8,15 +8,21 @@
 public class DatabaseCustomer
 {
     // instance variables - replace the example below with your own
-    String[] list_customer = null;
+    private String[] list_customer;
     /**
      * Constructor for objects of class pesanan
      */
-    private DatabaseCustomer()
+    public DatabaseCustomer()
     {
         
     }
-
+    
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
     public boolean addCustomer(Customer baru)
     {
         return false;

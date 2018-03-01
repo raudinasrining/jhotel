@@ -8,6 +8,14 @@
 public class JHotel
 {
     /**
+     * Constructor for objects of class pesanan
+     */
+    public JHotel()
+    {
+        
+    }
+    
+    /**
      * An example of a method - replace this comment with your own
      *
      * @param  y  a sample parameter for a method
@@ -16,10 +24,6 @@ public class JHotel
     public void main(String args[])
     {
         // put your code here
-        return;
-    }
-    public void JHotel()
-    {
         return;
     }
 }

@@ -8,12 +8,12 @@
 public class Pesanan
 {
     // instance variables - replace the example below with your own
-    double biaya = 0;
-    Customer pelanggan = new Customer();
-    String nama_pelanggan = null;
-    String jenis_kamar = null;
-    boolean isDiproses = false;
-    boolean isSelesai = false;
+    private double biaya;
+    private Customer pelanggan; 
+    private String nama_pelanggan;
+    private String jenis_kamar;
+    private boolean isDiproses;
+    private boolean isSelesai;
     /**
      * Constructor for objects of class pesanan
      */
@@ -21,7 +21,13 @@ public class Pesanan
     {
             
     }
-
+    
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
     public double getBiaya()
     {
         return 0;
