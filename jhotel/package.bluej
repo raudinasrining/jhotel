@@ -1,8 +1,8 @@
 #BlueJ package file
-dependency1.from=Pesanan
+dependency1.from=DatabaseCustomer
 dependency1.to=Customer
 dependency1.type=UsesDependency
-dependency2.from=DatabaseCustomer
+dependency2.from=Pesanan
 dependency2.to=Customer
 dependency2.type=UsesDependency
 dependency3.from=DatabasePesanan
@@ -21,8 +21,8 @@ package.divider.horizontal=0.6
 package.divider.vertical=0.8885496183206106
 package.editor.height=575
 package.editor.width=1252
-package.editor.x=-8
-package.editor.y=-8
+package.editor.x=-124
+package.editor.y=119
 package.frame.height=754
 package.frame.width=1382
 package.numDependencies=4

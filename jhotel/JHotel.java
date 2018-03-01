@@ -2,8 +2,8 @@
 /**
  * Write a description of class JHotel here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Raudina Asrining Putri
+ * @version 01-03-2018
  */
 public class JHotel
 {
@@ -23,7 +23,6 @@ public class JHotel
      */
     public void main(String args[])
     {
-        // put your code here
-        return;
+ 
     }
 }

@@ -2,8 +2,8 @@
 /**
  * Write a description of class Customer here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Raudina Asrining Putri
+ * @version 01-03-2018
  */
 public class Customer
 {
@@ -37,11 +37,11 @@ public class Customer
     
     public void setID(int id)
     {
-        return;
+   
     }
     
     public void setNama(String nama)
     {
-        return;
+       
     }
 }

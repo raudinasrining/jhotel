@@ -2,8 +2,8 @@
 /**
  * Write a description of class pesanan here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Raudina Asrining Putri
+ * @version 01-03-2018
  */
 public class Pesanan
 {
