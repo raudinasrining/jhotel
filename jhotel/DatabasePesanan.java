@@ -7,28 +7,37 @@
  */
 public class DatabasePesanan
 {
+    // instance variables - replace the example below with your own
+    String[] list_pesanan = null;
+    /**
+     * Constructor for objects of class pesanan
+     */
     private DatabasePesanan()
     {
-        String[] list_pesanan = null;
+        
     }
 
-    public boolean addPesanan(pesanan baru)
+    public boolean addPesanan(Pesanan baru)
     {
         return false;
     }
-    public boolean removePesanan(pesanan pesan)
+    
+    public boolean removePesanan(Pesanan pesan)
     {
         return false;
     }
-    public pesanan getPesanan(Customer cust)
+    
+    public Pesanan getPesanan(Customer cust)
     {
         return null;
     }
+    
     public String[] getPesananDatabase()
     {
         return null;
     }
-    public void pesananDibatalkan(pesanan pesan)
+    
+    public void pesananDibatalkan(Pesanan pesan)
     {
         return;
     }
