@@ -15,9 +15,11 @@ public class Lokasi
     /**
      * Constructor for objects of class Lokasi
      */
-    public Lokasi()
+    public Lokasi(float x_coord, float y_coord, String deskripsiLokasi)
     {
-        
+        this.x_coord = x_coord;
+        this.y_coord = y_coord;
+        this.deskripsiLokasi = deskripsiLokasi;
     }
 
     /**

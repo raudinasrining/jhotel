@@ -13,9 +13,10 @@ public class Customer
     /**
      * Constructor for objects of class pesanan
      */
-    public Customer()
+    public Customer(int id, String nama)
     {
-        
+        this.id = id;
+        this.nama = nama;
     }
     
     /**

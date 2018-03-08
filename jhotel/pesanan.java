@@ -14,6 +14,7 @@ public class Pesanan
     private String jenis_kamar;
     private boolean isDiproses;
     private boolean isSelesai;
+    private Room kamar;
     /**
      * Constructor for objects of class pesanan
      */
@@ -71,8 +72,7 @@ public class Pesanan
     /**
      * metode ini untuk mengeksekusi fungsi setBiaya
      *
-     * @param metode ini menggunakan parameter biaya dengan 
-     * tipe data double
+     * @param biaya merupakan biaya pesanan
      */
     public void setBiaya(double biaya)
     { //disini digunakan this karena variabel dan parameter menggunakan
@@ -89,6 +89,11 @@ public class Pesanan
     public Customer setPelanggan(Customer baru)
     {
         return pelanggan;
+    }
+    
+    public void setRoom(Room kamar)
+    {
+        
     }
     
     /**
@@ -111,6 +116,11 @@ public class Pesanan
     public boolean setStatusSelesai(boolean diproses)
     {
         return isSelesai;
+    }
+    
+    public Room getRoom()
+    {
+        return kamar;
     }
     
     /**

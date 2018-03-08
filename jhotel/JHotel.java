@@ -21,8 +21,15 @@ public class JHotel
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public void main(String args[])
+    public static void main(String args[])
     {
- 
+        Customer nama = new Customer(20, "raudina");
+        Lokasi tempat = new Lokasi(1,2,"depok");
+        Hotel hotel = new Hotel("margo hotel", tempat,5);
+        Pesanan pesan = new Pesanan(1000, nama);
+        pesan.printData();
+        hotel.printData();
+        nama.setNama("nama2");
+        nama.printData();
     }
 }
