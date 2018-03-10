@@ -1,15 +1,15 @@
 
 /**
- * Write a description of class TipeKamar here.
+ * class enum TipeKamar
  *
  * @author Raudina Asrining Putri
- * @version 08-03-2018
+ * @version 10-03-2018
  */
 public enum TipeKamar
 {
     
     Single("Single"),Double("Double"),Premium("Premium");
-    
+    //variabel class dari class TipeKamar
     private final String tipe;
     
     /**
@@ -21,7 +21,6 @@ public enum TipeKamar
      */
     private TipeKamar(String tipe)
     {
-        
         this.tipe = tipe;
     }
 

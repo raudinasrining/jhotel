@@ -1,35 +1,36 @@
 
 /**
- * Write a description of class pesanan here.
+ * class Pesanan
  *
  * @author Raudina Asrining Putri
- * @version 01-03-2018
+ * @version 10-03-2018
  */
 public class Pesanan
 {
-    // instance variables - replace the example below with your own
+    //variabel instance untuk class Pesanan
     private double biaya;
     private Customer pelanggan; 
     private String nama_pelanggan;
-    private String jenis_kamar;
+    private TipeKamar tipe_kamar;
     private boolean isDiproses;
     private boolean isSelesai;
     private Room kamar;
     /**
-     * Constructor for objects of class pesanan
+     * Constructor untuk objek dari class pesanan
+     * @param biaya,pelanggan
      */
     public Pesanan(double biaya, Customer pelanggan)
-    {
-         this.biaya = biaya;
+    {//this digunakan karena nama variabel instance sama dengan
+     //nama variabel parameter
+         this.biaya = biaya; 
          this.pelanggan = pelanggan;
+         nama_pelanggan=pelanggan.getNama();
     }
     
     /**
-     * metode ini untuk mengeksekusi fungsi biaya dengan nilai
-     * yang bertipe data double
+     * metode ini untuk mengembalikan nilai biaya
      *
-     * @return metode getBiaya akan mengembalikan nilai pada 
-     * biaya
+     * @return biaya
      */
     public double getBiaya()
     {
@@ -37,10 +38,9 @@ public class Pesanan
     }
     
     /**
-     * metode ini untuk mengeksekusi fungsi customer
+     * metode ini mengembalikan nilai pelanggan
      *
-     * @return metode getPelanggan akan mengembalikan nilai
-     * pada variabel pelanggan
+     * @return pelanggan
      */
     public Customer getPelanggan()
     {
@@ -48,10 +48,9 @@ public class Pesanan
     }
     
     /**
-     * metode ini untuk mengeksekusi fungsi getStatusDiproses
+     * metode ini untuk mengembalikan nilai isDiproses
      *
-     * @return metode ini akan mengembalikan nilai pada 
-     * variabel isDiproses
+     * @return isDiproses
      */
     public boolean getStatusDiproses()
     {
@@ -59,10 +58,29 @@ public class Pesanan
     }
     
     /**
-     * metode ini untuk mengeksekusi fungsi getStatusSelesai
+     * metode ini untuk mengembalikan nilai nama_pelanggan
      *
-     * @return metode ini akan mengembalikan nilai pada 
-     * variabel isDiproses
+     * @return nama_pelanggan
+     */
+    public String getNamaPelanggan()
+    {
+        return nama_pelanggan;
+    }
+    
+    /**
+     * metode ini untuk mengembalikan nilai tipe_kamar
+     *
+     * @return tipe_kamar
+     */
+    public TipeKamar getTipeKamar()
+    {
+        return tipe_kamar;
+    }
+    
+    /**
+     * metode ini untuk mengembalikan nilai isSelesai
+     *
+     * @return isSelesai
      */
     public boolean getStatusSelesai()
     {
@@ -70,37 +88,64 @@ public class Pesanan
     }
     
     /**
-     * metode ini untuk mengeksekusi fungsi setBiaya
+     * metode ini untuk menetapkan nilai biaya
      *
-     * @param biaya merupakan biaya pesanan
+     * @param biaya 
      */
     public void setBiaya(double biaya)
-    { //disini digunakan this karena variabel dan parameter menggunakan
-      //nama yang sama yaitu biaya
+    { //this digunakan karena nama variabel instance sama dengan
+      //nama variabel parameter
         this.biaya = biaya; 
     }
     
     /**
-     * metode ini untuk mengeksekusi fungsi setPelanggan
+     * metode ini untuk menetapkan nilai pelanggan
      *
-     * @return metode ini mengembalikan nilai untuk variabel
-     * pelanggan
+     * @param pelanggan
      */
-    public Customer setPelanggan(Customer baru)
-    {
-        return pelanggan;
-    }
-    
-    public void setRoom(Room kamar)
-    {
-        
+    public void setPelanggan(Customer pelanggan)
+    {//this digunakan karena nama variabel instance sama dengan
+      //nama variabel parameter
+        this.pelanggan=pelanggan;
     }
     
     /**
-     * metode ini untuk mengeksekusi fungsi setStatusDiproses
+     * metode ini untuk menetapkan nilai nama_pelanggan
      *
-     * @return metode ini mengembalikan nilai untuk variabel
-     * isDiproses
+     * @param nama_pelanggan
+     */
+    public void setNamaPelanggan(String nama_pelanggan)
+    {//this digunakan karena nama variabel instance sama dengan
+      //nama variabel parameter
+        this.nama_pelanggan=nama_pelanggan;
+    }
+    
+    /**
+     * metode ini untuk menetapkan nilai kamar
+     *
+     * @param kamar
+     */
+    public void setRoom(Room kamar)
+    {//this digunakan karena nama variabel instance sama dengan
+      //nama variabel parameter
+        this.kamar=kamar;
+    }
+    
+    /**
+     * metode ini untuk menetapkan nilai tipe_kamar
+     *
+     * @param tipe_kamar
+     */
+    public void setTipeKamar(TipeKamar tipe_kamar)
+    {//this digunakan karena nama variabel instance sama dengan
+      //nama variabel parameter
+        this.tipe_kamar=tipe_kamar;
+    }
+    
+    /**
+     * metode ini untuk menetapkan nilai diproses
+     *
+     * @param diproses
      */
     public void setStatusDiproses(boolean diproses)
     {
@@ -108,28 +153,33 @@ public class Pesanan
     }
     
     /**
-     * metode ini untuk mengeksekusi fungsi setStatusSelesai
+     * metode ini untuk menetapkan nilai diproses
      *
-     * @return metode ini mengembalikan nilai untuk variabel
-     * isSelesai
+     * @param selesai
      */
-    public boolean setStatusSelesai(boolean diproses)
+    public void setStatusSelesai(boolean selesai)
     {
-        return isSelesai;
+        isSelesai=selesai;
     }
     
+    /**
+     * metode untuk mengembalikan nilai pada kamar
+     * @return kamar
+     */
     public Room getRoom()
     {
         return kamar;
     }
     
     /**
-     * metode ini untuk mengeksekusi fungsi printData
-     * dimana variabel biaya akan diprint
-     * 
+     * metode ini untuk mencetak data pesanan
      */
     public void printData()
     {
-        System.out.println(biaya);
+        System.out.println("\nPesanan");
+        System.out.println("Nama Pelanggan\t: " + nama_pelanggan);
+        System.out.println("Tipe Kamar\t: " + tipe_kamar);
+        System.out.println("Status layanan diproses: " + isDiproses);
+        System.out.println("Status layanan selesai: " + isSelesai);
     }
 }

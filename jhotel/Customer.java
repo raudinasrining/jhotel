@@ -1,30 +1,30 @@
 
 /**
- * Write a description of class Customer here.
+ * class Customer
  *
  * @author Raudina Asrining Putri
- * @version 01-03-2018
+ * @version 10-03-2018
  */
 public class Customer
 {
-    // mendeklarasikan semua instance variabel untuk class Customer
+    //variabel instance untuk class Customer
     protected int id;
     protected String nama;
     /**
-     * Constructor for objects of class pesanan
+     * Constructor untuk objek class Customer
+     * @param id,nama
      */
     public Customer(int id, String nama)
-    {
+    {//this digunakan karena nama variabel instance sama dengan
+     //nama variabel parameter
         this.id = id;
         this.nama = nama;
     }
     
     /**
-     * metode ini untuk mengeksekusi fungsi getID dengan tipe
-     * data integer
+     * metode ini untuk mengembalikan nilai id
      *
-     * @return metode ini mengembalikan nilai untuk variabel
-     * id
+     * @return id
      */
     public int getID()
     {
@@ -32,11 +32,9 @@ public class Customer
     }
     
     /**
-     * metode ini untuk mengeksekusi fungsi getNama dengan
-     * tipe data string
+     * metode ini untuk mengembalikan nilai nama
      *
-     * @return metode ini mengembalikan nilai untuk variabel
-     * nama
+     * @return nama
      */
     public String getNama()
     {
@@ -44,34 +42,34 @@ public class Customer
     }
     
     /**
-     * metode ini untuk mengeksekusi fungsi setID 
+     * metode ini untuk menetapkan nilai id
      *
-     * @param terdapat parameter id dengan tipe daya integer
+     * @param id
      */
     public void setID(int id)
-    {   //this diberikan karena nama variabel instance dan 
-        //nama parameter sama-sama 'id'
+    {//this digunakan karena nama variabel instance sama dengan
+     //nama variabel parameter
         this.id = id;
     }
     
     /**
-     * metode ini untuk mengeksekusi fungsi setNama
+     * metode ini untuk menetapkan nilai nama
      *
-     * @param terdapat parameter nama dengan tipe daya string
+     * @param nama
      */
     public void setNama(String nama)
-    {//this diberikan karena nama variabel instance dan 
-        //nama parameter sama-sama 'nama'
+    {//this digunakan karena nama variabel instance sama dengan
+     //nama variabel parameter
        this.nama = nama;
     }
     
     /**
-     * metode ini untuk mengeksekusi fungsi printData
-     * dimana variabel nama akan diprint
-     * 
+     * metode ini untuk mencetak data customer
      */
     public void printData()
     {
-        System.out.println(nama);
+        System.out.println("\nCustomer");
+        System.out.println("ID\t\t: " + id);
+        System.out.println("Nama\t\t: " + nama);
     }
 }

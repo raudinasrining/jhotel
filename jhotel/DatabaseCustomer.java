@@ -1,30 +1,25 @@
 
 /**
- * Write a description of class DatabaseCustomer here.
+ * class DataCustomer
  *
  * @author Raudina Asrining Putri
- * @version 01-03-2018
+ * @version 10-03-2018
  */
 public class DatabaseCustomer
 {
-    // mendeklarasi instance variable untuk class DatabaseCustomer
+    //variabel instance untuk class DataCustomer
     private String[] list_customer;
     /**
-     * Constructor for objects of class pesanan
+     * Constructor untuk objek dari class DataCustomer
      */
     public DatabaseCustomer()
     {
-        
+      
     }
     
-    /**
-     * metode ini untuk mengeksekusi fungsi addCustomer dengan tipe
-     * data boolean
-     *
-     * @return metode ini mengembalikan nilai false karena
-     * method menggunakan tipe data boolean
-     * 
-     * @param metode ini menggunakan parameter baru
+    /** metode addCustomer
+     * @param baru
+     * @return
      */
     public boolean addCustomer(Customer baru)
     {
@@ -32,13 +27,8 @@ public class DatabaseCustomer
     }
     
     /**
-     * metode ini untuk mengeksekusi fungsi removeCustomer dengan tipe
-     * data integer
-     *
-     * @return metode ini mengembalikan nilai false karena 
-     * method menggunakan tipe data boolean
-     * 
-     * @param metode ini menggunakan parameter baru
+     * metode removeCustomer
+     * @param id
      */
     public boolean removeCustomer(int id)
     {
@@ -46,11 +36,8 @@ public class DatabaseCustomer
     }
     
     /**
-     * metode ini untuk mengeksekusi fungsi getCustomerDatabase dengan tipe
-     * data string array
-     *
-     * @return metode ini mengembalikan nilai null karena 
-     * method menggunakan tipe data string
+     * metode getustomerDatabase
+     * @return
      */
     public String[] getCustomerDatabase()
     {

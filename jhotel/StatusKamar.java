@@ -1,6 +1,6 @@
 
 /**
- * Write a description of class StatusKamar here.
+ * class enum StatusKamar 
  *
  * @author Raudina Asrining Putri
  * @version 08-03-2018
@@ -9,8 +9,8 @@ public enum StatusKamar
 {
    
     Booked("Booked"),Processed("Processed"),Vacant("Vacant");
-    
-    private final String status;
+    //variabel class untuk class StatusKamar
+    private String status;
     
     /**
      * method StatusKamar merupakan constructor dari class enum
@@ -18,9 +18,8 @@ public enum StatusKamar
      * 
      * @param status dengan tipe data string untuk variable status
      */
-    private StatusKamar(String status)
+    StatusKamar(String status)
     {
-        
         this.status = status;
     }
 
@@ -29,8 +28,8 @@ public enum StatusKamar
      * 
      * @return mengembalikan nilai variable status
      */
-    public String IsString()
+    public String toString()
     {
-        return this.status;
+        return status;
     }
 }

@@ -1,60 +1,101 @@
 
 /**
- * Write a description of class Lokasi here.
+ * class Lokasi
  *
  * @author Raudina Asrining Putri
- * @version 01-03-2018
+ * @version 10-03-2018
  */
 public class Lokasi
 {
-    // instance variables - replace the example below with your own
+    //variabel instance untuk class Lokasi
     private float x_coord;
     private float y_coord;
     private String deskripsiLokasi;
 
     /**
-     * Constructor for objects of class Lokasi
+     * Constructor untuk objek pada class Lokasi
+     * 
+     * @param x_coord,y_coord,deskripsiLokasi
      */
     public Lokasi(float x_coord, float y_coord, String deskripsiLokasi)
-    {
+    {//this digunakan karena nama variabel instance sama dengan
+     //nama variabel parameter
         this.x_coord = x_coord;
         this.y_coord = y_coord;
         this.deskripsiLokasi = deskripsiLokasi;
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * metode ini untuk menetapkan nilai x_coord
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @param x_coord
      */
     public void setX(float x_coord)
-    {
+    {//this digunakan karena nama variabel instance sama dengan
+     //nama variabel parameter
         this.x_coord = x_coord;
     }
     
+    /**
+     * metode ini untuk menetapkan nilai y_coord
+     *
+     * @param y_coord
+     */
     public void setY(float y_coord)
-    {
+    {//this digunakan karena nama variabel instance sama dengan
+     //nama variabel parameter
         this.y_coord = y_coord;
     }
     
+    /**
+     * metode ini untuk menetapkan nilai deskripsi
+     *
+     * @param deskripsi
+     */
     public void setDeskripsi(String deskripsi)
-    {
+    {//this digunakan karena nama variabel instance sama dengan
+     //nama variabel parameter
         this.deskripsiLokasi = deskripsi;
     }
     
+    /**
+     * metode ini untuk mengambil nilai x_coord
+     *
+     * @return x_coord
+     */
     public float getX()
     {
         return x_coord;
     }
     
+    /**
+     * metode ini untuk mengambil nilai y_coord
+     *
+     * @return y_coord
+     */
     public float getY()
     {
         return y_coord;
     }
     
+    /**
+     * metode ini untuk mengambil nilai deskripsi
+     *
+     * @return deskripsiLokasi
+     */
+    public String getDeskripsi()
+    {
+        return deskripsiLokasi;
+    }
+    
+    /**
+     * metode ini untuk mencetak data lokasi
+     */
     public void printData()
     {
-        System.out.println(deskripsiLokasi);
+        System.out.println("\nLokasi");
+        System.out.println("Koordinat X\t: " + x_coord);
+        System.out.println("Koordinat Y\t: " + y_coord);
+        System.out.println("Deskripsi\t: " + deskripsiLokasi);
     }
 }

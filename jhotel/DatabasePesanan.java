@@ -1,9 +1,9 @@
 
 /**
- * Write a description of class DatabasePesanan here.
+ * class DatabasePesanan
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Raudina Asrining Putri
+ * @version 10-03-2018
  */
 public class DatabasePesanan
 {
@@ -18,11 +18,9 @@ public class DatabasePesanan
     }
     
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  menggunakan parameter baru
-     * @return    mengembalikan nilai false karena menggunakan
-     * tipe data boolean
+     * metode addPesanan
+     * @param baru
+     * @return
      */
     public boolean addPesanan(Pesanan baru)
     {
@@ -30,11 +28,9 @@ public class DatabasePesanan
     }
     
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  menggunakan parameter pesan
-     * @return    mengembalikan nilai false karena menggunakan
-     * tipe data boolean
+     * metode removePesanan
+     * @param pesan
+     * @return
      */
     public boolean removePesanan(Pesanan pesan)
     {
@@ -42,11 +38,8 @@ public class DatabasePesanan
     }
     
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  menggunakan parameter cust
-     * @return    mengembalikan nilai false karena menggunakan
-     * tipe data string
+     * metode untuk mengambil nilai pesanan
+     * @param cust
      */
     public Pesanan getPesanan(Customer cust)
     {
@@ -54,19 +47,18 @@ public class DatabasePesanan
     }
     
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  menggunakan parameter cust
-     * @return    mengembalikan nilai false karena menggunakan
-     * tipe data string
+     * metode untuk mengambil database pesanan
      */
     public String[] getPesananDatabase()
     {
         return null;
     }
     
+    /**
+     * metode untuk membatalkan pesanan
+     * @param pesan
+     */
     public void pesananDibatalkan(Pesanan pesan)
-    {
-        
+    {   
     }
 }
