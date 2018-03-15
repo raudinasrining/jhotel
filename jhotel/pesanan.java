@@ -10,21 +10,23 @@ public class Pesanan
     //variabel instance untuk class Pesanan
     private double biaya;
     private Customer pelanggan; 
-    private String nama_pelanggan;
-    private TipeKamar tipe_kamar;
     private boolean isDiproses;
     private boolean isSelesai;
     private Room kamar;
+    private double jumlahHari;
+    
     /**
      * Constructor untuk objek dari class pesanan
      * @param biaya,pelanggan
      */
-    public Pesanan(double biaya, Customer pelanggan)
+    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar)
     {//this digunakan karena nama variabel instance sama dengan
      //nama variabel parameter
-         this.biaya = biaya; 
+         biaya = kamar.getDailyTariff()*jumlahHari;
          this.pelanggan = pelanggan;
-         nama_pelanggan=pelanggan.getNama();
+         this.jumlahHari=jumlahHari;
+         this.kamar=kamar;
+         
     }
     
     /**
@@ -35,6 +37,11 @@ public class Pesanan
     public double getBiaya()
     {
         return biaya;
+    }
+    
+    public double getJumlahHari()
+    {
+        return jumlahHari;
     }
     
     /**
@@ -58,26 +65,6 @@ public class Pesanan
     }
     
     /**
-     * metode ini untuk mengembalikan nilai nama_pelanggan
-     *
-     * @return nama_pelanggan
-     */
-    public String getNamaPelanggan()
-    {
-        return nama_pelanggan;
-    }
-    
-    /**
-     * metode ini untuk mengembalikan nilai tipe_kamar
-     *
-     * @return tipe_kamar
-     */
-    public TipeKamar getTipeKamar()
-    {
-        return tipe_kamar;
-    }
-    
-    /**
      * metode ini untuk mengembalikan nilai isSelesai
      *
      * @return isSelesai
@@ -87,15 +74,25 @@ public class Pesanan
         return isSelesai;
     }
     
+    public Room getRoom()
+    {
+        return kamar;
+    }
+    
     /**
      * metode ini untuk menetapkan nilai biaya
      *
      * @param biaya 
      */
-    public void setBiaya(double biaya)
+    public void setBiaya()
     { //this digunakan karena nama variabel instance sama dengan
       //nama variabel parameter
-        this.biaya = biaya; 
+        biaya = kamar.getDailyTariff()*jumlahHari;
+    }
+    
+    public void setJumlahHari(double jumlahHari)
+    {
+        this.jumlahHari=jumlahHari;
     }
     
     /**
@@ -108,40 +105,7 @@ public class Pesanan
       //nama variabel parameter
         this.pelanggan=pelanggan;
     }
-    
-    /**
-     * metode ini untuk menetapkan nilai nama_pelanggan
-     *
-     * @param nama_pelanggan
-     */
-    public void setNamaPelanggan(String nama_pelanggan)
-    {//this digunakan karena nama variabel instance sama dengan
-      //nama variabel parameter
-        this.nama_pelanggan=nama_pelanggan;
-    }
-    
-    /**
-     * metode ini untuk menetapkan nilai kamar
-     *
-     * @param kamar
-     */
-    public void setRoom(Room kamar)
-    {//this digunakan karena nama variabel instance sama dengan
-      //nama variabel parameter
-        this.kamar=kamar;
-    }
-    
-    /**
-     * metode ini untuk menetapkan nilai tipe_kamar
-     *
-     * @param tipe_kamar
-     */
-    public void setTipeKamar(TipeKamar tipe_kamar)
-    {//this digunakan karena nama variabel instance sama dengan
-      //nama variabel parameter
-        this.tipe_kamar=tipe_kamar;
-    }
-    
+
     /**
      * metode ini untuk menetapkan nilai diproses
      *
@@ -166,9 +130,9 @@ public class Pesanan
      * metode untuk mengembalikan nilai pada kamar
      * @return kamar
      */
-    public Room getRoom()
+    public void setRoom(Room kamar)
     {
-        return kamar;
+        this.kamar=kamar;
     }
     
     /**
@@ -177,9 +141,10 @@ public class Pesanan
     public void printData()
     {
         System.out.println("\nPesanan");
-        System.out.println("Nama Pelanggan\t: " + nama_pelanggan);
-        System.out.println("Tipe Kamar\t: " + tipe_kamar);
+        System.out.println("Nama Pelanggan\t: " + pelanggan.getNama());
         System.out.println("Status layanan diproses: " + isDiproses);
+        System.out.println("Jumlah hari: " + jumlahHari);
+        System.out.println("Biaya: " + biaya);
         System.out.println("Status layanan selesai: " + isSelesai);
     }
 }

@@ -5,29 +5,25 @@
  * @author Raudina Asrining Putri
  * @version 10-03-2018
  */
-public class Room
+public abstract class Room
 {
     //variabel instance untuk class Room
     private Hotel hotel;
-    private int id;
     private String nomor_kamar;
     private boolean isAvailable;
-    private Customer customer;
-    private double dailyTarif;
-    private StatusKamar status_kamar;
+    protected double dailyTariff;
     private Pesanan pesan;
-
+    private StatusKamar status_kamar;
+    private TipeKamar tipe_kamar;
     /**
      * Constructor untuk class Room
      */
-    public Room(Hotel hotel, String nomor_kamar, boolean isAvailable,
-    Customer customer, double dailyTarif, StatusKamar status_kamar)
+    public Room(Hotel hotel, String nomor_kamar, boolean isAvailable, 
+    StatusKamar status_kamar)
     {
         this.hotel=hotel;
         this.nomor_kamar=nomor_kamar;
         this.isAvailable=isAvailable;
-        this.customer=customer;
-        this.dailyTarif=dailyTarif;
         this.status_kamar=status_kamar;
     }
 
@@ -38,15 +34,6 @@ public class Room
     public void setHotel(Hotel hotel)
     {
         this.hotel = hotel;
-    }
-    
-    /**
-     * metode untuk menetapkan id pelanggan
-     * @param id
-     */
-    public void setID(int id)
-    {
-        this.id = id;
     }
     
     /**
@@ -68,21 +55,12 @@ public class Room
     }
     
     /**
-     * metode untuk menetapkan nilai customer
-     * @param customer
-     */
-    public void setCustomer(Customer customer)
-    {
-        this.customer = customer;
-    }
-    
-    /**
      * metode untuk menetapkan nilai dailyTarif
      * @param dailyTarif
      */
-    public void setDailyTarif(double dailyTarif)
+    public void setDailyTariff(double dailyTariff)
     {
-        this.dailyTarif = dailyTarif;
+        this.dailyTariff = dailyTariff;
     }
     
     /**
@@ -113,15 +91,6 @@ public class Room
     }
     
     /**
-     * metode untuk mengambil nilai id
-     * @return id
-     */
-    public int getID()
-    {
-        return id;
-    }
-    
-    /**
      * metode untuk mengambil nilai nomor kamar
      * @return nomor_kamar
      */
@@ -140,31 +109,18 @@ public class Room
     }
     
     /**
-     * metode untuk mengambil nilai customer
-     * @return customer
-     */
-    public Customer getCustomer()
-    {
-        return customer;
-    }
-    
-    /**
      * metode untuk mengambil nilai daily tarif
      * @return dailyTarif
      */
-    public double getDailyTarif()
+    public double getDailyTariff()
     {
-        return dailyTarif;
+        return dailyTariff;
     }
     
     /**
      * metode untuk mengambil nilai status kamar
      * @return status_kamar
      */
-    public StatusKamar getStatusKamar()
-    {
-        return status_kamar;
-    }
     
     /**
      * metode untuk mengambil nilai pesanan
@@ -175,6 +131,9 @@ public class Room
         return pesan;
     }
     
+    public abstract TipeKamar getTipeKamar();
+  
+
     /**
      * metode untuk mencetak data kamar
      */
@@ -184,8 +143,8 @@ public class Room
         System.out.println("Nama Hotel\t: " + hotel.getNama());
         System.out.println("Nomor Kamar\t: " + nomor_kamar);
         System.out.println("Tersedia\t: " + isAvailable);
-        System.out.println("Pelanggan\t: " + customer.getNama());
-        System.out.println("Harga\t\t: " + dailyTarif);
-        System.out.println("Status Kamar\t: " + status_kamar);
+        System.out.println("Tipe Kamar\t: " + getTipeKamar().toString());
+        System.out.println("Harga\t\t: " + dailyTariff);
+        System.out.println("Status Kamar\t: " + status_kamar.toString());
     }
 }
