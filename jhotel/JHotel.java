@@ -5,6 +5,8 @@
  * @author Raudina Asrining Putri
  * @version 10-03-2018
  */
+
+
 public class JHotel
 {
     /**
@@ -23,7 +25,15 @@ public class JHotel
      */
     public static void main(String args[])
     {
-        /*System.out.println("Welcome to JHotel");
+        Customer cust1 = new Customer(1,"raudina",new GregorianCalendar(2018,3,22).getTime());
+        /*Customer pelanggan1 = new Customer(12,"rau");
+        pelanggan1.setEmail("e.t.d@");
+        Customer pelanggan2 = new Customer(13,"dina");
+        pelanggan2.setEmail("Ee_.td@ui.ac.id");
+        Customer pelanggan3 = new Customer(14,"asrining");
+        pelanggan3.setEmail("Raudina.modul5@nelab.com");
+        
+        System.out.println("Welcome to JHotel");
         Lokasi lokasi1 = new Lokasi(20,20,"Depok");
         Customer pelanggan1 = new Customer(123, "Raudina");
         Hotel hotel1 = new Hotel("Hotel", lokasi1, 5);
@@ -64,15 +74,15 @@ public class JHotel
         room1.printData();
         pesanan1.printData();
         */
-        Lokasi lokasi1 = new Lokasi(20,20,"Depok");
+        /*Lokasi lokasi1 = new Lokasi(20,20,"Depok");
         Hotel Hotel1 = new Hotel("Hotel", lokasi1, 5);
         Room Single_Room=  new SingleRoom(Hotel1,"24",true,StatusKamar.Vacant);
         Customer pelanggan1 = new Customer(123, "Raudina");
         Pesanan pesanan1 = new Pesanan(2, pelanggan1,Single_Room);
         Single_Room.setDailyTariff(1000);
-        pesanan1.setBiaya();
+        pesanan1.setBiaya();*/
         
-        lokasi1.printData();
+        /*lokasi1.printData();
         pelanggan1.printData();
         Hotel1.printData();
         
@@ -105,5 +115,7 @@ public class JHotel
         {
             System.out.println("Salah, bukan double room");
         }
+        */
+       
     }
 }

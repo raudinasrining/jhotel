@@ -5,6 +5,8 @@
  * @author Raudina Asrining Putri
  * @version 10-03-2018
  */
+
+import java.util.Date;
 public class Pesanan
 {
     //variabel instance untuk class Pesanan
@@ -14,6 +16,7 @@ public class Pesanan
     private boolean isSelesai;
     private Room kamar;
     private double jumlahHari;
+    private Date tanggalPesan;
     
     /**
      * Constructor untuk objek dari class pesanan
@@ -79,6 +82,11 @@ public class Pesanan
         return kamar;
     }
     
+    public Date getTanggalPesan()
+    {
+        return tanggalPesan;
+    }
+    
     /**
      * metode ini untuk menetapkan nilai biaya
      *
@@ -135,16 +143,10 @@ public class Pesanan
         this.kamar=kamar;
     }
     
-    /**
-     * metode ini untuk mencetak data pesanan
-     */
-    public void printData()
+    public void setTanggalPesan(Date tanggalPesan)
     {
-        System.out.println("\nPesanan");
-        System.out.println("Nama Pelanggan\t: " + pelanggan.getNama());
-        System.out.println("Status layanan diproses: " + isDiproses);
-        System.out.println("Jumlah hari: " + jumlahHari);
-        System.out.println("Biaya: " + biaya);
-        System.out.println("Status layanan selesai: " + isSelesai);
+        this.tanggalPesan=tanggalPesan;
     }
+   
+    
 }

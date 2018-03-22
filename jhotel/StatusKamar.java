@@ -10,7 +10,7 @@ public enum StatusKamar
    
     Booked("Booked"),Processed("Processed"),Vacant("Vacant");
     //variabel class untuk class StatusKamar
-    private String status;
+    private String deskripsi;
     
     /**
      * method StatusKamar merupakan constructor dari class enum
@@ -18,9 +18,9 @@ public enum StatusKamar
      * 
      * @param status dengan tipe data string untuk variable status
      */
-    StatusKamar(String status)
+    StatusKamar(String deskripsi)
     {
-        this.status = status;
+        this.deskripsi=deskripsi;
     }
 
     /**
@@ -28,8 +28,5 @@ public enum StatusKamar
      * 
      * @return mengembalikan nilai variable status
      */
-    public String toString()
-    {
-        return status;
-    }
+    
 }

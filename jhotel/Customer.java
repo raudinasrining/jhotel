@@ -5,20 +5,27 @@
  * @author Raudina Asrining Putri
  * @version 10-03-2018
  */
+
+import java.util.GregorianCalendar;
+import java.util.Date;
+import java.util.regex.*;
 public class Customer
 {
     //variabel instance untuk class Customer
     protected int id;
     protected String nama;
+    protected String email;
+    protected Date dob;
     /**
      * Constructor untuk objek class Customer
      * @param id,nama
      */
-    public Customer(int id, String nama)
+    public Customer(int id, String nama, int tanggal, int bulan, int tahun)
     {//this digunakan karena nama variabel instance sama dengan
      //nama variabel parameter
         this.id = id;
         this.nama = nama;
+        GregorianCalendar gc = new GregorianCalendar(tahun,bulan,tanggal);
     }
     
     /**
@@ -39,6 +46,16 @@ public class Customer
     public String getNama()
     {
         return nama;
+    }
+    
+    public String getEmail()
+    {
+        return email;
+    }
+    
+    public Date getDOB()
+    {
+        return dob;
     }
     
     /**
@@ -63,13 +80,21 @@ public class Customer
        this.nama = nama;
     }
     
+    public void setEmail(String email)
+    {
+        String REGEX = "[^.][^\\s]+\\b@\\b[^-][^\\s]+"; 
+        Pattern p = Pattern.compile(REGEX); 
+        Matcher m = p.matcher(email); 
+        System.out.println("Email " +email+ "\n" + m.matches()); 
+
+    }
+    
+    public void setDOB(Date dob)
+    {
+        this.dob=dob;
+    }
+    
     /**
      * metode ini untuk mencetak data customer
      */
-    public void printData()
-    {
-        System.out.println("\nCustomer");
-        System.out.println("ID\t\t: " + id);
-        System.out.println("Nama\t\t: " + nama);
-    }
 }

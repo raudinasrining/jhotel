@@ -8,7 +8,7 @@
 public class DatabasePesanan
 {
     // mendeklarasikan instance variable untuk class DatabasePesanan
-    private String[] list_pesanan;
+    private static Pesanan list_pesanan;
     /**
      * Constructor for objects of class pesanan
      */
@@ -22,7 +22,7 @@ public class DatabasePesanan
      * @param baru
      * @return
      */
-    public boolean addPesanan(Pesanan baru)
+    public static boolean addPesanan(Pesanan baru)
     {
         return false;
     }
@@ -32,7 +32,7 @@ public class DatabasePesanan
      * @param pesan
      * @return
      */
-    public boolean removePesanan(Pesanan pesan)
+    public static boolean removePesanan(Pesanan pesan)
     {
         return false;
     }
@@ -41,7 +41,7 @@ public class DatabasePesanan
      * metode untuk mengambil nilai pesanan
      * @param cust
      */
-    public Pesanan getPesanan(Customer cust)
+    public static Pesanan getPesanan(Customer cust)
     {
         return null;
     }
@@ -49,7 +49,7 @@ public class DatabasePesanan
     /**
      * metode untuk mengambil database pesanan
      */
-    public String[] getPesananDatabase()
+    public static String[] getPesananDatabase()
     {
         return null;
     }
@@ -58,7 +58,7 @@ public class DatabasePesanan
      * metode untuk membatalkan pesanan
      * @param pesan
      */
-    public void pesananDibatalkan(Pesanan pesan)
+    public static void pesananDibatalkan(Pesanan pesan)
     {   
     }
 }

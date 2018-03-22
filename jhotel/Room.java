@@ -14,7 +14,6 @@ public abstract class Room
     protected double dailyTariff;
     private Pesanan pesan;
     private StatusKamar status_kamar;
-    private TipeKamar tipe_kamar;
     /**
      * Constructor untuk class Room
      */
