@@ -81,7 +81,7 @@ public class Hotel
     /**
      * metode ini untuk mencetak data hotel
      */
-    public void printData()
+    public String toString()
     {
         System.out.println("\nHotel");
         System.out.println("Nama Hotel\t: " + nama);

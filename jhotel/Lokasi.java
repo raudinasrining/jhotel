@@ -91,7 +91,7 @@ public class Lokasi
     /**
      * metode ini untuk mencetak data lokasi
      */
-    public void printData()
+    public String toString()
     {
         System.out.println("\nLokasi");
         System.out.println("Koordinat X\t: " + x_coord);
