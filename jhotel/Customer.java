@@ -6,6 +6,7 @@
  * @version 10-03-2018
  */
 
+import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
 import java.util.Date;
 import java.util.regex.*;
@@ -24,8 +25,8 @@ public class Customer
     {//this digunakan karena nama variabel instance sama dengan
      //nama variabel parameter
         this.id = id;
-        this.nama = nama;
-        GregorianCalendar gc = new GregorianCalendar(tahun,bulan,tanggal);
+        this.nama = nama;        
+        dob = new GregorianCalendar(tahun,bulan-1,tanggal).getTime();
     }
     
     /**
@@ -55,6 +56,8 @@ public class Customer
     
     public Date getDOB()
     {
+         SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMMMM yyyy");
+        System.out.println("DOB = "+dateFormat.format(dob));
         return dob;
     }
     
@@ -91,10 +94,20 @@ public class Customer
     
     public void setDOB(Date dob)
     {
-        this.dob=dob;
+        System.out.printf("%1$s %2$td %2$tB %2$tY","DOB:",dob);
     }
     
     /**
      * metode ini untuk mencetak data customer
      */
+    
+    public String toString()
+    {
+        if(DatabasePesanan.getPesanan(Customer)){
+       return "\nCustomer"+ "\nNama\t"+ nama + "\nid\t" +id +"\nE-mail"+email+"\nDate of birth"+ dob+ "\nBooking order is on process";
+    }
+    else {
+       return "\nCustomer"+ "\nNama\t"+ nama + "\nid\t" +id +"\nE-mail"+email+"\nDate of birth"+ dob;
+    }
+}
 }

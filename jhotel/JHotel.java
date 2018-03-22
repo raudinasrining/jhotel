@@ -25,7 +25,10 @@ public class JHotel
      */
     public static void main(String args[])
     {
-        Customer cust1 = new Customer(1,"raudina",new GregorianCalendar(2018,3,22).getTime());
+        //Customer cust1 = new Customer(1,"raudina",new GregorianCalendar(2018,3,22).getTime());
+        //cust1.getDOB();
+        Customer c1 = new Customer(2,"rau",22,4,2018);
+        c1.getDOB();
         /*Customer pelanggan1 = new Customer(12,"rau");
         pelanggan1.setEmail("e.t.d@");
         Customer pelanggan2 = new Customer(13,"dina");

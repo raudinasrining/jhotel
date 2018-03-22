@@ -22,7 +22,7 @@ public class Pesanan
      * Constructor untuk objek dari class pesanan
      * @param biaya,pelanggan
      */
-    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar)
+    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar, int hari, int bulan, int tahun)
     {//this digunakan karena nama variabel instance sama dengan
      //nama variabel parameter
          biaya = kamar.getDailyTariff()*jumlahHari;
@@ -31,6 +31,15 @@ public class Pesanan
          this.kamar=kamar;
          
     }
+    
+    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar, Date tanggalPesan)
+    {
+        this.jumlahHari=jumlahHari;
+        this.pelanggan=pelanggan;
+        this.kamar=kamar;
+        this.tanggalPesan=tanggalPesan;
+    }
+    
     
     /**
      * metode ini untuk mengembalikan nilai biaya
@@ -148,5 +157,9 @@ public class Pesanan
         this.tanggalPesan=tanggalPesan;
     }
    
+    public String toString()
+    {
+        return "\nPesanan\n Nama Pelanggan\t:" + pelanggan.getNama()+"\n Jumlah Hari\t:"+jumlahHari+"\nBiaya\t:"+biaya+"\nStatus Diproses\t:"+ isDiproses + "\nStatus Selesai\t:"+isSelesai;
+    }
     
 }

@@ -93,9 +93,6 @@ public class Lokasi
      */
     public String toString()
     {
-        System.out.println("\nLokasi");
-        System.out.println("Koordinat X\t: " + x_coord);
-        System.out.println("Koordinat Y\t: " + y_coord);
-        System.out.println("Deskripsi\t: " + deskripsiLokasi);
+        return "Koordinat X\t:"+ x_coord + "\nKoordinat Y\t:" + y_coord +"\nDeskripsi\t:"+deskripsiLokasi;
     }
 }
