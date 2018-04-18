@@ -22,16 +22,18 @@ public class Pesanan
     
     /**
      * Constructor untuk objek dari class pesanan
-     * @param biaya,pelanggan
+     * @param pelanggan
      */
     public Pesanan(double jumlahHari, Customer pelanggan)
     {//this digunakan karena nama variabel instance sama dengan
      //nama variabel parameter
-         biaya = kamar.getDailyTariff()*jumlahHari;
-         this.pelanggan = pelanggan;
-         this.jumlahHari=jumlahHari;
-         isAktif = true;
-         tanggalPesan= new Date();
+        this.jumlahHari = jumlahHari;
+        this.pelanggan = pelanggan;
+        this.kamar = kamar;
+        this.biaya = kamar.getDailyTariff()*jumlahHari;
+        this.isAktif = true;
+        this.tanggalPesan = new Date();
+        this.id = DatabasePesanan.getLastPesananID()+1;
     }
     
     /**

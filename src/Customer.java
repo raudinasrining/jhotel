@@ -5,11 +5,9 @@
  * @author Raudina Asrining Putri
  * @version 10-03-2018
  */
+import java.util.*;
+import java.text.*;
 
-import java.text.SimpleDateFormat;
-import java.util.GregorianCalendar;
-import java.util.Date;
-import java.util.regex.*;
 public class Customer
 {
     //variabel instance untuk class Customer
@@ -17,6 +15,8 @@ public class Customer
     protected String nama;
     protected String email;
     protected Date dob;
+
+    SimpleDateFormat dobformat = new SimpleDateFormat("dd MMMMMMMMM yyyy");
     /**
      * Constructor untuk objek class Customer
      * @param id,nama
@@ -24,11 +24,17 @@ public class Customer
     public Customer(int id, String nama, int tanggal, int bulan, int tahun)
     {//this digunakan karena nama variabel instance sama dengan
      //nama variabel parameter
-        this.id = id;
+        this.id = DatabaseCustomer.getLastCustomerID()+1;
         this.nama = nama;        
-        dob = new GregorianCalendar(tahun,bulan-1,tanggal).getTime();
+        this.dob = new GregorianCalendar(tahun,bulan-1,tanggal).getTime();
     }
-    
+
+    public Customer(String nama,Date dob)
+    {
+        this.id = DatabaseCustomer.getLastCustomerID()+1;
+        this.nama = nama;
+        this.dob = dob;
+    }
     /**
      * metode ini untuk mengembalikan nilai id
      *
@@ -82,14 +88,16 @@ public class Customer
      //nama variabel parameter
        this.nama = nama;
     }
-    
-    public void setEmail(String email)
-    {
-        String REGEX = "[^.][^\\s]+\\b@\\b[^-][^\\s]+"; 
-        Pattern p = Pattern.compile(REGEX); 
-        Matcher m = p.matcher(email); 
-        System.out.println("Email " +email+ "\n" + m.matches()); 
 
+    public void setEmail(String email){
+        if (email.matches("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+                + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$")){
+            System.out.println("Email valid");
+            this.email = email;
+        }
+        else {
+            System.out.println("Email tidak valid");
+        }
     }
     
     public void setDOB(Date dob)

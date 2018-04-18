@@ -73,15 +73,15 @@ public class DatabasePesanan
         return null;
     }
 
-    public static Pesanan getPesanan(Room kamar)
-    {
-        for(Pesanan pesan : PESANAN_DATABASE){
-            if (pesan.getRoom()==kamar){
-                return pesan;
-            }
-        }
-        return null;
-    }
+   public static Pesanan getPesanan(Room kamar){
+       for (Pesanan pesan :
+               PESANAN_DATABASE) {
+           if(kamar.equals(pesan.getRoom())==true){
+               return pesan;
+           }
+       }
+       return null;
+   }
 
     public static Pesanan getPesananAktif(Customer pelanggan)
     {

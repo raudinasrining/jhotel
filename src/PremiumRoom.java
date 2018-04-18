@@ -9,7 +9,7 @@ public class PremiumRoom extends Room
 {
     // instance variables - replace the example below with your own
     private static double DISCOUNT=0.3;
-    private static TipeKamar TIPE_KAMAR;    
+    private static TipeKamar TIPE_KAMAR = TipeKamar.Double;
     /**
      * Constructor for objects of class PremiumRoom
      */
@@ -23,11 +23,6 @@ public class PremiumRoom extends Room
     public TipeKamar getTipeKamar()
     {
         return TIPE_KAMAR;
-    }
-    
-    public double getDiscount()
-    {
-        return DISCOUNT;
     }
     
     public void setDailyTariff(double dailyTariff)

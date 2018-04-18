@@ -16,6 +16,7 @@ public class Administrasi
         pesan.setStatusSelesai(false);
         pesan.setStatusDiproses(true);
         pesan.setRoom(kamar);
+        DatabaseRoom.getRoom(kamar.getHotel(),kamar.getNomorKamar()).setStatusKamar(StatusKamar.Booked);
     }
 
     /**
@@ -44,11 +45,13 @@ public class Administrasi
      */
     public static void pesananDibatalkan(Room kamar)
     {
-        Pesanan pesan = kamar.getPesanan();
-        kamar.getPesanan().setStatusSelesai(false);
-        kamar.getPesanan().setStatusDiproses(false);
-        kamar.setPesanan(null);
-        //roomLepasPesanan(kamar);
+        Pesanan pesan = DatabasePesanan.getPesanan(kamar);
+        if(pesan != null) {
+            pesan.setStatusSelesai(false);
+            pesan.setStatusDiproses(false);
+            pesan.setRoom(null);
+        }
+        DatabaseRoom.getRoom(kamar.getHotel(), kamar.getNomorKamar()).setStatusKamar(StatusKamar.Vacant);
     }
     
     /**
@@ -57,10 +60,13 @@ public class Administrasi
      */
     public static void pesananSelesai(Room kamar)
     {
-        kamar.getPesanan().setStatusSelesai(true);
-        kamar.getPesanan().setStatusDiproses(false);
-        kamar.setPesanan(null);
-        roomLepasPesanan(kamar);
+        Pesanan pesan = DatabasePesanan.getPesanan(kamar);
+        if(pesan != null) {
+            pesan.setStatusSelesai(true);
+            pesan.setStatusDiproses(false);
+            pesan.setRoom(null);
+        }
+        DatabaseRoom.getRoom(kamar.getHotel(), kamar.getNomorKamar()).setStatusKamar(StatusKamar.Vacant);
     }
     
     /**
@@ -69,7 +75,7 @@ public class Administrasi
      */
     public static void pesananDibatalkan(Pesanan pesan)
     {
-        roomLepasPesanan(pesan.getRoom());
+        DatabaseRoom.getRoom(pesan.getRoom().getHotel(),pesan.getRoom().getNomorKamar()).setStatusKamar(StatusKamar.Vacant);
         pesan.setStatusAktif(false);
         pesan.setStatusSelesai(false);
         pesan.setStatusDiproses(false);
@@ -82,7 +88,7 @@ public class Administrasi
      */
     public static void pesananSelesai(Pesanan pesan)
     {
-        roomLepasPesanan(pesan.getRoom());
+        DatabaseRoom.getRoom(pesan.getRoom().getHotel(),pesan.getRoom().getNomorKamar()).setStatusKamar(StatusKamar.Vacant);
         pesan.setStatusAktif(false);
         pesan.setStatusSelesai(true);
         pesan.setStatusDiproses(false);

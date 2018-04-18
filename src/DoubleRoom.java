@@ -9,7 +9,7 @@ public class DoubleRoom extends Room
 {
     // instance variables - replace the example below with your own
     private Customer customer2;
-    private static TipeKamar TIPE_KAMAR;
+    private static TipeKamar TIPE_KAMAR= TipeKamar.Double;
     /**
      * Constructor for objects of class DoubleRoom
      */

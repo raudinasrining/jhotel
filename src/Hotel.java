@@ -7,7 +7,7 @@
  */
 public class Hotel
 {
-    //variabel instance untuk class Lokasi
+    private int ID;
     private String nama;
     private Lokasi lokasi;
     private int bintang;
@@ -21,7 +21,8 @@ public class Hotel
      //nama variabel parameter
         this.nama = nama;
         this.lokasi = lokasi;
-        this.bintang = bintang; 
+        this.bintang = bintang;
+        this.ID=DatabaseHotel.getLastHotelID()+1;
     }
 
     /**
@@ -40,6 +41,10 @@ public class Hotel
     public String getNama()
     {
         return nama;
+    }
+
+    public int getID() {
+        return ID
     }
     
     /**
@@ -77,7 +82,10 @@ public class Hotel
     {
         this.bintang = bintang;
     }
-    
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
     /**
      * metode ini untuk mencetak data hotel
      */
