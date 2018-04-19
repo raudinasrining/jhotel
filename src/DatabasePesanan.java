@@ -3,96 +3,75 @@
  * class DatabasePesanan
  *
  * @author Raudina Asrining Putri
- * @version 10-03-2018
+ * @version 18-04-2018
  */
 
 import java.util.ArrayList;
 public class DatabasePesanan
 {
     // mendeklarasikan instance variable untuk class DatabasePesanan
-    private static ArrayList<Pesanan> PESANAN_DATABASE;
-    private static int LAST_PESANAN_ID=0;
-    /**
-     * Constructor for objects of class pesanan
-     */
-    public DatabasePesanan()
-    {
-        PESANAN_DATABASE = new ArrayList<Pesanan>();
-    }
-    
+    private static ArrayList<Pesanan> PESANAN_DATABASE = new ArrayList<>();
+    private static int LAST_PESANAN_ID = 0;
 
-    public static ArrayList<Pesanan> getPesananDatabase()
-    {
+    public static ArrayList<Pesanan> getPesananDatabase() {
         return PESANAN_DATABASE;
     }
 
-    public static int getLastPesananID()
-    {
+    public static int getLastPesananID() {
         return LAST_PESANAN_ID;
     }
 
-    public static boolean addPesanan(Pesanan baru)
-    {
-        return false;
+    public static boolean addPesanan(Pesanan baru) throws PesananSudahAdaException {
+        if (getPesananAktif(baru.getPelanggan()) == null) {
+            PESANAN_DATABASE.add(baru);
+            LAST_PESANAN_ID = baru.getID();
+            return true;
+        } else {
+            throw new PesananSudahAdaException(baru);
+        }
     }
-    
-    /**
-     * metode removePesanan
-     * @param pesan
-     * @return
-     */
-    public static boolean removePesanan(Pesanan pesan)
-    {
-        for(Pesanan pesan==pesan){
-            if(pesan.getRoom()!=null){
-                pesan.setStatusAktif(false);
-                PESANAN_DATABASE.remove(pesan);
-                return true;
-            }
-            else if(pesan.getRoom()==null){
-                if(pesan.getStatusAktif()==true){
-                    pesan.setStatusAktif(false);
-                    PESANAN_DATABASE.remove(pesan);
-                    return true;
-                }
-            }
-    }
-    }
-    
-    /**
-     * metode untuk mengambil nilai pesanan
-     * @param
-     */
-    public static Pesanan getPesanan(int ID)
-    {
-        for(Pesanan pesan : PESANAN_DATABASE){
-            if(pesan.getID()==ID){
+
+    public static Pesanan getPesanan(int id) {
+        for (Pesanan pesan :
+                PESANAN_DATABASE) {
+            if (pesan.getID() == id) {
                 return pesan;
             }
         }
         return null;
     }
 
-   public static Pesanan getPesanan(Room kamar){
-       for (Pesanan pesan :
-               PESANAN_DATABASE) {
-           if(kamar.equals(pesan.getRoom())==true){
-               return pesan;
-           }
-       }
-       return null;
-   }
-
-    public static Pesanan getPesananAktif(Customer pelanggan)
-    {
-        for(Pesanan pesan : PESANAN_DATABASE){
-            if(pesan.getPelanggan()==pelanggan){
-                if(pesan.getStatusAktif()==true){
-                    return pesan;
-                }
+    public static Pesanan getPesanan(Room kamar) {
+        for (Pesanan pesan :
+                PESANAN_DATABASE) {
+            if (kamar.equals(pesan.getRoom()) == true) {
+                return pesan;
             }
-            return null;
         }
+        return null;
+    }
+
+    public static Pesanan getPesananAktif(Customer pelanggan) {
+        for (Pesanan pesan :
+                PESANAN_DATABASE) {
+            if (pesan.getStatusAktif() == true && pesan.getPelanggan().equals(pelanggan) == true) {
+                return pesan;
+            }
+        }
+        return null;
+    }
+
+    public static boolean removePesanan(Pesanan pesan) throws PesananTidakDitemukanException {
+        for (Pesanan pesan2 :
+                PESANAN_DATABASE) {
+            if (pesan.equals(pesan2)) {
+                if (pesan.getRoom() != null) Administrasi.pesananDibatalkan(pesan);
+                else if (pesan.getStatusAktif() == true) pesan.setStatusAktif(false);
+                PESANAN_DATABASE.remove(pesan2);
+                return true;
+            }
+        }
+        throw new PesananTidakDitemukanException(pesan.getPelanggan());
     }
 
 }

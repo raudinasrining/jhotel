@@ -2,8 +2,8 @@
 /**
  * Write a description of class SinglerRoom here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Raudina Asrining Putri
+ * @version 18-04-2018
  */
 public class SingleRoom extends Room
 {
@@ -13,9 +13,9 @@ public class SingleRoom extends Room
     /**
      * Constructor for objects of class SinglerRoom
      */
-    public SingleRoom(Hotel hotel, String nomor_kamar, StatusKamar status_kamar)
+    public SingleRoom(Hotel hotel, String nomor_kamar)
     {
-        super(hotel, nomor_kamar, status_kamar);
+        super(hotel, nomor_kamar);
     }
     
     public TipeKamar getTipeKamar()

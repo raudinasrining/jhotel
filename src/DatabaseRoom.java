@@ -11,16 +11,16 @@ import java.util.ArrayList;
 public class DatabaseRoom {
     private static ArrayList<Room> ROOM_DATABASE = new ArrayList<>();
 
-    public static ArrayList<Room> getRoomDatbabse() {
+    public static ArrayList<Room> getRoomDatabase() {
         return ROOM_DATABASE;
     }
-    public static boolean addRoom(Room baru){
+    public static boolean addRoom(Room baru) throws RoomSudahAdaException {
         if(baru.getHotel() != null) {
             for (Room kamar :
                     ROOM_DATABASE) {
                 if(kamar.getHotel().equals(baru.getHotel())){
                     if(baru.getNomorKamar().compareTo(kamar.getNomorKamar()) == 0){
-                        return false;
+                        throw new RoomSudahAdaException(baru);
                     }
                 }
             }
@@ -62,7 +62,7 @@ public class DatabaseRoom {
         return toReturn;
     }
 
-    public static boolean removeRoom(Hotel hotel, String nomor_kamar){
+    public static boolean removeRoom(Hotel hotel, String nomor_kamar) throws RoomTidakDitemukanException {
         for (Room kamar :
                 ROOM_DATABASE) {
             if(kamar.getHotel().equals(hotel)){
@@ -73,6 +73,7 @@ public class DatabaseRoom {
                 }
             }
         }
-        return false;
+        throw new RoomTidakDitemukanException(hotel, nomor_kamar);
     }
+
 }

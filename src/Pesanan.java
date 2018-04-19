@@ -30,7 +30,7 @@ public class Pesanan
         this.jumlahHari = jumlahHari;
         this.pelanggan = pelanggan;
         this.kamar = kamar;
-        this.biaya = kamar.getDailyTariff()*jumlahHari;
+       // this.biaya = kamar.getDailyTariff()*jumlahHari;
         this.isAktif = true;
         this.tanggalPesan = new Date();
         this.id = DatabasePesanan.getLastPesananID()+1;
@@ -95,11 +95,7 @@ public class Pesanan
         return tanggalPesan;
     }
     
-    /**
-     * metode ini untuk menetapkan nilai biaya
-     *
-     * @param biaya 
-     */
+
     public void setID(int id){ this.id=id;}
     public void setBiaya()
     { //this digunakan karena nama variabel instance sama dengan
@@ -162,7 +158,23 @@ public class Pesanan
    
     public String toString()
     {
-        return "\nPesanan\n Nama Pelanggan\t:" + pelanggan.getNama()+"\n Jumlah Hari\t:"+jumlahHari+"\nBiaya\t:"+biaya+"\nStatus Diproses\t:"+ isDiproses + "\nStatus Selesai\t:"+isSelesai;
+        String final_status = "EMPTY";
+        if(isDiproses == true && isSelesai == false) final_status = "ON PROCESS";
+        else if(isDiproses == false && isSelesai == false) final_status = "EMPTY";
+        else if(isDiproses == false && isSelesai == true) final_status = "DONE";
+
+
+        if(getRoom() == null){
+            return ("Dibuat oleh " + pelanggan.getNama() +
+                    "\nStatus Pesanan: " + final_status + ".\n");
+        }
+        else {
+            return ("Oleh:\n " + getPelanggan().getNama()
+                    + ".\nProses booking :" + getRoom().getHotel().getNama()
+                    + "\nNomor kamar:\n " + getRoom().getNomorKamar()
+                    + "\nTipe Kamar:\n " + getRoom().getTipeKamar().toString()
+                    + ".\n Status:\n " + final_status + ".");
+        }
     }
     
 }

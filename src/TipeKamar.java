@@ -10,23 +10,19 @@ public enum TipeKamar
     
     Single("Single"),Double("Double"),Premium("Premium");
     //variabel class dari class TipeKamar
-    private String deskripsi;
+    private final String type;
     
-    /**
-     * method TipeKamar merupakan constructor dari class enum
-     * TipeKamar
-     * 
-     * @param
-     * method TipeKamar
-     */
-    private TipeKamar(String deskripsi)
+
+    private TipeKamar(String type)
+
     {
-        this.deskripsi = deskripsi;
+        this.type = type;
     }
 
 
-    //public toString()
+    public String toString()
     {
+        return this.type;
     }
     
 }

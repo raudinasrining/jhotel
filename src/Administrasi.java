@@ -3,14 +3,15 @@
  * class Administrasi
  *
  * @author Raudina Asrining Putri
- * @version 10-03-2018
+ * @version 18-04-2018
  */
 public class Administrasi
 {
-    /**
-     * metode untuk memproses pemesanan kamar
-     * @param pesan,kamar
-     */
+    public Administrasi()
+    {
+
+    }
+
     public static void pesananDitugaskan(Pesanan pesan, Room kamar)
     {
         pesan.setStatusSelesai(false);
@@ -19,30 +20,6 @@ public class Administrasi
         DatabaseRoom.getRoom(kamar.getHotel(),kamar.getNomorKamar()).setStatusKamar(StatusKamar.Booked);
     }
 
-    /**
-     * metode untuk memproses kamar yang telah dipesan
-     * @param pesan,kamar
-     */
-    public static void roomAmbilPesanan(Pesanan pesan, Room kamar)
-    {
-        kamar.setStatusKamar(StatusKamar.Booked);
-        kamar.setPesanan(pesan);
-    }
-
-    /**
-     * metode untuk memproses kamar vacant
-     * @param kamar
-     */
-    public static void roomLepasPesanan(Room kamar)
-    {
-        kamar.setStatusKamar(StatusKamar.Vacant);
-        kamar.setPesanan(null);
-    }
-    
-    /**
-     * metode untuk memproses pembatalan kamar
-     * @param kamar
-     */
     public static void pesananDibatalkan(Room kamar)
     {
         Pesanan pesan = DatabasePesanan.getPesanan(kamar);

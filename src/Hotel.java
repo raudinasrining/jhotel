@@ -44,7 +44,7 @@ public class Hotel
     }
 
     public int getID() {
-        return ID
+        return ID;
     }
     
     /**
@@ -91,6 +91,6 @@ public class Hotel
      */
     public String toString()
     {
-        return "Nama Hotel\t:" + nama + "\nLokasi\t\t:" + lokasi.getDeskripsi() + "\nBintang\t\t:"+bintang;
+        return "Nama Hotel\t:" + nama + "\nLokasi\t\t:" + lokasi.getDeskripsi() + "\nBintang\t\t:"+bintang + "\n";
     }
 }

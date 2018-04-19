@@ -3,7 +3,7 @@
  * class Room
  *
  * @author Raudina Asrining Putri
- * @version 10-03-2018
+ * @version 18-04-2018
  */
 public abstract class Room {
     //variabel instance untuk class Room
@@ -15,26 +15,17 @@ public abstract class Room {
     /**
      * Constructor untuk class Room
      */
-    public Room(Hotel hotel, String nomor_kamar, StatusKamar status_kamar) {
+    public Room(Hotel hotel, String nomor_kamar) {
         this.hotel = hotel;
         this.nomor_kamar = nomor_kamar;
-        this.status_kamar = status_kamar.Vacant;
+        status_kamar=status_kamar.Vacant;
     }
 
-    /**
-     * metode untuk menetapkan nilai hotel
-     *
-     * @param hotel
-     */
-    public void setHotel(Hotel hotel) {
+    public void setHotel(Hotel hotel)
+    {
         this.hotel = hotel;
     }
 
-    /**
-     * metode untuk menetapkan nomor kamar
-     *
-     * @param nomor_kamar
-     */
     public void setNomorKamar(String nomor_kamar) {
         this.nomor_kamar = nomor_kamar;
     }
@@ -44,7 +35,8 @@ public abstract class Room {
      *
      * @param dailyTariff
      */
-    public void setDailyTariff(double dailyTariff) {
+    public void setDailyTariff(double dailyTariff)
+    {
         this.dailyTariff = dailyTariff;
     }
 
@@ -53,20 +45,22 @@ public abstract class Room {
      *
      * @param status_kamar
      */
-    public void setStatusKamar(StatusKamar status_kamar) {
+    public void setStatusKamar(StatusKamar status_kamar)
+    {
         this.status_kamar = status_kamar;
     }
 
     public StatusKamar getStatusKamar() {
         return status_kamar;
     }
-    
+
     /**
      * metode untuk mengambil nilai hotel
      *
      * @return hotel
      */
-    public Hotel getHotel() {
+    public Hotel getHotel()
+    {
         return hotel;
     }
 
@@ -75,7 +69,8 @@ public abstract class Room {
      *
      * @return nomor_kamar
      */
-    public String getNomorKamar() {
+    public String getNomorKamar()
+    {
         return nomor_kamar;
     }
 
@@ -84,26 +79,28 @@ public abstract class Room {
      *
      * @return dailyTarif
      */
-    public double getDailyTariff() {
+    public double getDailyTariff()
+    {
         return dailyTariff;
     }
 
-    public abstract TipeKamar getTipeKamar();
 
-    public Pesanan getPesanan(Pesanan pesan) {
-        return pesan;
-    }
+    public abstract TipeKamar getTipeKamar();
 
     /**
      * metode untuk mencetak data kamar
      */
-    public String toString() {
-        if (DatabasePesanan.getPesanan(this) == null) {
+    public String toString()
+    {
+        if (DatabasePesanan.getPesanan(this) == null)
+        {
             return "\nNama Hotel \t\t:" + getHotel().getNama()
                     + "\nTipe Kamar \t\t:" + getTipeKamar()
                     + "\nHarga \t\t:" + getDailyTariff()
                     + "\nStatus Kamar \t\t:" + getStatusKamar().toString();
-        } else {
+        }
+        else
+            {
             return "\nNama Hotel \t\t:" + getHotel().getNama()
                     + "\nTipe Kamar \t\t:" + getTipeKamar()
                     + "\nHarga \t\t:" + getDailyTariff()
