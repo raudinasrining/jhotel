@@ -13,7 +13,7 @@ public class CustomerController {
     @RequestMapping(value = "/newcustomer", method = RequestMethod.POST)
     public Customer newCust(@RequestParam(value="name") String name,
                             @RequestParam(value="email") String email) {
-        Customer customer = new Customer(name, 10, 10, 10, email);
+        Customer customer = new Customer(name, 10, 10, 2000, email);
         try {
             DatabaseCustomer.addCustomer(customer);
         } catch(Exception ex) {
